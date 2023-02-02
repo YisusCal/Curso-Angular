@@ -1,0 +1,128 @@
+<h1>Aqui mostraremos los botones que realizaran un cambio de color al texto</h1>
+<!-- Esta es una forma de asignar las clases -->
+<!-- <div>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-danger disabled"
+    (click)="texto_color = 'text-danger'"
+  >
+    Color Rojo
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-success mx-2 disabled"
+    (click)="texto_color = 'text-success'"
+  >
+    Color Verde
+  </button>
+  <button
+    [class.disabled]="button_disabled"
+    class="btn btn-primary disabled"
+    (click)="texto_color = 'text-primary'"
+  >
+    Color Azul
+  </button>
+</div> -->
+
+<!-- Esta es otra forma de asignar las clases -->
+<!-- Para la todas las clases es muy comun utilizar (ngClass) -->
+<!-- <div>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-danger': true
+    }"
+    (click)="texto_color = 'text-danger'"
+  >
+    Color Rojo
+  </button>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-success': true,
+      'mx-2': true
+    }"
+    (click)="texto_color = 'text-success'"
+  >
+    Color Verde
+  </button>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-primary': true
+    }"
+    (click)="texto_color = 'text-primary'"
+  >
+    Color Azul
+  </button>
+</div> -->
+
+<!-- Una 3 froma mas -->
+<div>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-danger': true
+    }"
+    (click)="texto_color = 'text-danger'"
+  >
+    Color Rojo
+  </button>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-success': true,
+      'mx-2': true
+    }"
+    (click)="texto_color = 'text-success'"
+  >
+    Color Verde
+  </button>
+  <button
+    [ngClass]="{
+      disabled: button_disabled,
+      btn: true,
+      'btn-primary': true
+    }"
+    (click)="texto_color = 'text-primary'"
+  >
+    Color Azul
+  </button>
+</div>
+
+<p [class]="texto_color">Texto que cambia de color</p>
+
+<p>{{ texto_color }}</p>
+
+<button class="btn btn-secondary" (click)="button_disabled = !button_disabled">
+  Activar/Desactivar
+</button>
+
+<!-- Video numero 08 Con imagenes -->
+<h2>Video numero 08 enlace de eventos con imagenes</h2>
+<div>
+  <button
+    class="btn btn-primary"
+    (click)="
+      src =
+        'https://images.pexels.com/photos/12916973/pexels-photo-12916973.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load'
+    "
+  >
+    Imagen 1
+  </button>
+  <button
+    class="btn btn-danger mx-2"
+    (click)="
+      src =
+        'https://images.pexels.com/photos/14999879/pexels-photo-14999879.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load'
+    "
+  >
+    Imagen 2
+  </button>
+</div>
+<img [src]="src" alt="" />

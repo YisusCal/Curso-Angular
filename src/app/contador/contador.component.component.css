@@ -1,0 +1,35 @@
+p {
+  color: blue;
+}
+.nom {
+  color: purple;
+}
+
+.edad {
+  color: rosybrown;
+}
+
+.incrOdecre {
+  color: black;
+}
+
+.contador {
+  font-size: 50px;
+}
+
+button {
+  margin: 0;
+  padding: 5px 25px 5px 25px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  color: black;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: solid;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: aliceblue;
+}
