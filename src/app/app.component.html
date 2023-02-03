@@ -5,3 +5,25 @@
 <app-formulario></app-formulario>
 <app-bucles></app-bucles>
 <app-switch></app-switch>
+<app-formulario2></app-formulario2>
+<app-formulario3-reactivo></app-formulario3-reactivo>
+
+<div class="container">
+  <h2>Componente padre</h2>
+
+  <input type="text" class="form-control mb-4" [(ngModel)]="title" />
+
+  <!-- Se interpreta como si se estuviera enviado codigo JS -->
+  <!-- Sin simplicar -->
+  <!-- <app-children [title]="title" (titleChange)="title = $event"></app-children> -->
+  <!-- Simplificado -->
+  <app-children [(title)]="title"></app-children>
+
+  <!-- Se interpreta como si se estuviera mandando texto plano -->
+  <!-- <app-children
+    title="Texto de prueba desde el componente padre"
+  ></app-children> -->
+
+  <!-- Interpolacion -->
+  <!-- <app-children title="{{ title }}"></app-children> -->
+</div>

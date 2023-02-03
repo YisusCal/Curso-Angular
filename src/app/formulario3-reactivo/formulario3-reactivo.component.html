@@ -1,0 +1,65 @@
+<br />
+<br />
+<h2>Formulario de Tipo Reactivo, recomendado para formularios mas complejos</h2>
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="formUser" (ngSubmit)="procesar()">
+      <div class="mb-2">
+        <label class="form-label"> Nombre </label>
+
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Por favor ingrese su nombre"
+        />
+
+        <!-- Es la primera alerta en el nombre -->
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="name.valid || name.pristine"
+        >
+          El nombre es obligatorio
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label"> Email </label>
+
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          placeholder="Por favor ingrese su email"
+        />
+
+        <!-- Es la segunda alerta del email -->
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="email.valid || email.pristine"
+        >
+          <samp *ngIf="email.errors?.['required']"
+            >El email debe ser obligatorio</samp
+          >
+          <samp *ngIf="email.errors?.['email']">El email debe ser valido</samp>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" [disabled]="formUser.invalid">
+        Enviar
+      </button>
+    </form>
+  </div>
+  <!-- {{ email.errors | json }} -->
+</div>
+<!-- 
+{{ name.value }}
+
+<br />
+
+{{ email.value }} -->
+
+<!-- {{ formUser.get("name")?.value }}
+<br />
+{{ formUser.get("email")?.value }} -->

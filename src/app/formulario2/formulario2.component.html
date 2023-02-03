@@ -1,0 +1,58 @@
+<!-- Formularios Basados en plantillas, este tipo de formularios se recomiendan cuando son muy pequeños, en este caso son para dos campos-->
+<h2>Formulario numero dos, basado en un enfoque de plantillas</h2>
+<div class="card-body">
+  <div class="card-body">
+    <form (ngSubmit)="procesar()" #formContact="ngForm">
+      <div class="mb-2">
+        <label class="form-laber"> Nombre: </label>
+        <input
+          type="text"
+          name="nombre"
+          class="form-control"
+          placeholder="Por favor ingrese un nombre"
+          [(ngModel)]="persona.nombre"
+          required
+          #name="ngModel"
+        />
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="name.valid || name.pristine"
+        >
+          El nombre es obligatorio
+        </div>
+      </div>
+      <div>
+        <label class="form-label"> Edad: </label>
+        <input
+          type="text"
+          name="edad"
+          class="form-control"
+          placeholder="Por favor ingrese una edad"
+          [(ngModel)]="persona.edad"
+          required
+          #edad="ngModel"
+        />
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="edad.valid || edad.pristine"
+        >
+          La edad es obligatoria
+        </div>
+      </div>
+
+      <button class="btn btn-primary mt-2" [disabled]="formContact.invalid">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
+<!-- Ver -->
+{{ formContact.valid }}
+<!-- {{ persona | json }} -->
+
+<!--  <button
+        class="btn btn-primary mt-2"
+        [disabled]="!name.valid || edad.invalid"
+      >
+        Enviar
+      </button> -->
